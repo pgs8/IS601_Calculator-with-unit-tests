@@ -56,6 +56,15 @@ class MyTestCase(unittest.TestCase):
             result = self.calculator.multiply(x, y)
             self.assertEqual(float(result), float(expect_result))
 
+    def test_division_method_calculator(self):
+        test_data = load_test_data_into_list('../tests/Unit Test Division.csv')
+        for row in test_data:
+            x = row[0]
+            y = row[1]
+            expect_result = row[2]
+            result = self.calculator.divide(x, y)
+            self.assertEqual(float(result), float(expect_result))
+
 
 if __name__ == '__main__':
     unittest.main()
