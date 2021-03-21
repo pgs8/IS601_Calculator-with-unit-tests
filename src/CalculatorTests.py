@@ -38,21 +38,18 @@ class MyTestCase(unittest.TestCase):
     def test_subtraction_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Subtraction.csv')
         for row in test_data:
-            expect_result = row[2]
             result = self.calculator.subtract(row[0], row[1])
             self.assertEqual(float(result), float(row[2]))
 
     def test_multiplication_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Multiplication.csv')
         for row in test_data:
-            expect_result = row[2]
             result = self.calculator.multiply(row[0], row[1])
             self.assertEqual(float(result), float(row[2]))
 
     def test_division_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Division.csv')
         for row in test_data:
-            expect_result = row[2]
             result = self.calculator.divide(row[0], row[1])
             self.assertEqual(float(result), float(row[2]))
 
