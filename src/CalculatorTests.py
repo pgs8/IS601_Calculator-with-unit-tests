@@ -32,38 +32,35 @@ class MyTestCase(unittest.TestCase):
     def test_add_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Addition.csv')
         for row in test_data:
-            x = row[0]
-            y = row[1]
-            expect_result = row[2]
-            result = self.calculator.add(x, y)
-            self.assertEqual(float(result), float(expect_result))
+            result = self.calculator.add(row[0], row[1])
+            self.assertEqual(float(result), float(row[2]))
 
     def test_subtraction_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Subtraction.csv')
         for row in test_data:
-            x = row[0]
-            y = row[1]
             expect_result = row[2]
-            result = self.calculator.subtract(x, y)
-            self.assertEqual(float(result), float(expect_result))
+            result = self.calculator.subtract(row[0], row[1])
+            self.assertEqual(float(result), float(row[2]))
 
     def test_multiplication_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Multiplication.csv')
         for row in test_data:
-            x = row[0]
-            y = row[1]
             expect_result = row[2]
-            result = self.calculator.multiply(x, y)
-            self.assertEqual(float(result), float(expect_result))
+            result = self.calculator.multiply(row[0], row[1])
+            self.assertEqual(float(result), float(row[2]))
 
     def test_division_method_calculator(self):
         test_data = load_test_data_into_list('../tests/Unit Test Division.csv')
         for row in test_data:
-            x = row[0]
-            y = row[1]
             expect_result = row[2]
-            result = self.calculator.divide(x, y)
-            self.assertEqual(float(result), float(expect_result))
+            result = self.calculator.divide(row[0], row[1])
+            self.assertEqual(float(result), float(row[2]))
+
+    def test_square_method_calculator(self):
+        test_data = load_test_data_into_list('../tests/Unit Test Square.csv')
+        for row in test_data:
+            result = self.calculator.square(row[0])
+            self.assertEqual(float(result), float(row[1]))
 
 
 if __name__ == '__main__':
